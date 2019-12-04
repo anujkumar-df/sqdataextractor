@@ -11,6 +11,7 @@ namespace SonarqubeIssueExtractor
     {
         static void Main(string[] args)
         {
+            string x = "Anuj";
             var issues = new List<CCIssue>();
             var client = GetWebClient();
             var projects = JsonConvert.DeserializeObject<Projects>(client.DownloadString($"http://localhost:9000/api/components/search_projects?ps=50&facets=reliability_rating%2Csecurity_rating%2Csqale_rating%2Ccoverage%2Cduplicated_lines_density%2Cncloc%2Calert_status%2Clanguages%2Ctags&f=analysisDate%2CleakPeriodDate"));
